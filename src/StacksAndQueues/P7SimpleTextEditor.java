@@ -48,18 +48,26 @@ public class P7SimpleTextEditor {
     }
 
     private static void saveDeletedElements(StringBuilder text, int count, ArrayDeque<String> removedElements) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = text.length() - count; i < text.length(); i++) {
-            sb.append(text.charAt(i));
-        }
-        removedElements.push(sb.toString());
+
+        String removedText = text.substring(text.length() - count, text.length());
+        removedElements.push(removedText);
+
+        //        StringBuilder sb = new StringBuilder();
+        //        for (int i = text.length() - count; i < text.length(); i++) {
+        //            sb.append(text.charAt(i));
+        //        }
+        //       removedElements.push(sb);
+
     }
 
     private static void delete(StringBuilder text, int count) {
-        int textLength = text.length();
-        for (int i = 1; i <= count; i++) {
-            text.deleteCharAt(textLength - i);
-        }
+
+        text.replace(text.length() - count, text.length(), "");
+
+//        int textLength = text.length();
+//        for (int i = 1; i <= count; i++) {
+//            text.deleteCharAt(textLength - i);
+//        }
     }
 
     private static void add(StringBuilder text, String commandArg) {
