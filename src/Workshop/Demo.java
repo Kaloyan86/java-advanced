@@ -1,18 +1,21 @@
 package Workshop;
 
-
 public class Demo {
 
     public static void main(String[] args) {
 
-        CustomStack customStack = new CustomStack();
 
-        customStack.push(5);
-        customStack.push(6);
-        customStack.push(7);
-        customStack.push(8);
+        DoublyLinkedList list = new DoublyLinkedList();
+        list.addLast(1);
+        list.addLast(2);
+        list.addLast(3);
+        list.addLast(4);
+        list.addLast(5);
 
-        customStack.forEach(System.out::println);
+        int[] ints = list.toArray();
+
+        System.out.println();
+
     }
 }
 
