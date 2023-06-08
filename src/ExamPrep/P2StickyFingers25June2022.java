@@ -98,7 +98,7 @@ public class P2StickyFingers25June2022 {
                 break;
         }
 
-        return rowIndex < 0 || rowIndex > field.length || colIndex < 0 || colIndex > field.length;
+        return rowIndex < 0 || rowIndex >= field.length || colIndex < 0 || colIndex >= field.length;
     }
 
     private static void printMatrix(String[][] matrix) {
